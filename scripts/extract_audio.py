@@ -1,11 +1,11 @@
-import json
+import ast
 import os
 from pathlib import Path
 
 from helper import MediaHelper
 
-mediaFile = json.loads(os.environ.get('mediaFile'))
-mediaInfo = json.loads(os.environ.get('mediaInfo'))
+mediaFile = ast.literal_eval(os.environ.get('mediaFile'))
+mediaInfo = ast.literal_eval(os.environ.get('mediaInfo'))
 audio_channel = os.environ.get('audio_channel', '0')
 
 print(mediaFile)
