@@ -21,4 +21,4 @@ RUN pip install subaligner
 
 WORKDIR /scripts
 
-ENTRYPOINT ["python", "/extract_audio.py"]
+ENTRYPOINT ["python", "extract_audio.py"]
