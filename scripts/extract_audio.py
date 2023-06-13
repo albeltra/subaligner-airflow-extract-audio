@@ -5,7 +5,7 @@ from helper import MediaHelper
 
 mediaFile = os.environ.get('mediaFile')
 mediaInfo = os.environ.get('mediaInfo')
-audio_channel = os.environ.get('audio_channel')
+audio_channel = os.environ.get('audio_channel', '0')
 
 extract_audio = MediaHelper().extract_audio
 
