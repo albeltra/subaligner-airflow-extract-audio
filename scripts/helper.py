@@ -19,7 +19,8 @@ from subaligner.utils import Utils
 def clear_temp(*_):
     return
 
-
+def double_quoted(s: str) -> str:
+    return s.replace("'",  r"'\''")
 class MediaHelper(object):
     """ Utility for processing media assets including audio, video and
     subtitle files.
@@ -62,11 +63,11 @@ class MediaHelper(object):
 
         command = (
             "{0} -y -xerror -i '{1}' -map 0:a:{4} -ac 2 -ar {2} -vn '{3}'".format(
-                self.FFMPEG_BIN, Utils.double_quoted(video_file_path), freq, Utils.double_quoted(audio_file_path), channel
+                self.FFMPEG_BIN, double_quoted(video_file_path), freq, double_quoted(audio_file_path), channel
             )
             if decompress
             else "{0} -y -xerror -i '{1}' -vn -acodec copy '{2}'".format(
-                self.FFMPEG_BIN, Utils.double_quoted(video_file_path), Utils.double_quoted(audio_file_path)
+                self.FFMPEG_BIN, double_quoted(video_file_path), double_quoted(audio_file_path)
             )
         )
         with subprocess.Popen(
