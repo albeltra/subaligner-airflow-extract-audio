@@ -10,7 +10,7 @@ audio_channel = os.environ.get('audio_channel', '0')
 
 extract_audio = MediaHelper().extract_audio
 
-output_file_path = "/data/" + Path(mediaFile['path']).name + '.wav'
+output_file_path = "/audio-subs/" + Path(mediaFile['path']).name + '.wav'
 
 kwargs = {'video_file_path':  mediaFile['path'],
           'TEMP_DIR_PATH': output_file_path,
